@@ -10,6 +10,7 @@
                             <strong>{{movie.name}}</strong> - <i>{{movie.director}}</i>
                             [{{movie.year}}]
                             <p>{{movie.description}}</p>
+                            <p>{{movie.hashtag}}</p>
                             <router-link :to="{ name: 'movielist' }">돌아가기</router-link>
                         </div>
                     </div>

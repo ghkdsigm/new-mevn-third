@@ -9,6 +9,7 @@
                         <div>
                             <strong>{{movie.name}}</strong> - <i>{{movie.director}}</i>
                             [{{movie.year}}]
+                            <p>{{movie.hashtag}}</p>
                             <router-link :to="{ name: 'detailmovie', params: { id: movie.id }}">더보기</router-link>
                         </div>
                     </div>

@@ -7,6 +7,21 @@ var logger = require('morgan');
 // get movie router
 const movieRouter = require('./routes/movie');
 
+
+//mongoouseDB
+const { default: mongoose } = require('mongoose');
+mongoose.connect(
+    'mongodb+srv://ghkdsigm:ghkd123@cluster0.68g3g.mongodb.net/?retryWrites=true&w=majority',
+    {   useNewUrlParser: true,useUnifiedTopology: true },
+    function(err){
+        if(err){
+            console.log('mongodb connection errer!!!', err);
+        }
+        console.log('mongodb connected!!')
+    }
+)
+
+
 var app = express();
 
 // view engine setup

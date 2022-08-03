@@ -22,6 +22,10 @@
                 <input type="text" name="description" required v-model="movie.description">
             </div>
             <div>
+                <label for="description">해시태그</label>
+                <input type="text" name="description" required v-model="movie.hashtag">
+            </div>
+            <div>
                 <button type="submit">업로드</button>
             </div>
             <div>
@@ -42,10 +46,11 @@ export default {
                 year: 0,
                 director: "",
                 poster: "",
-                description: ""
+                description: "",
+                hashtag:""
             },
             response: "",
-            image: 'ex)https://img.wkorea.com/w/2022/07/style_62cb772e80422-493x700.jpg'
+            image: 'ex) https://img.wkorea.com/w/2022/07/style_62cb772e80422-493x700.jpg'
         };
     },
     methods: {
@@ -53,6 +58,7 @@ export default {
             this.$http.post("/movies/upload", this.movie)
                 .then(res => {
                     console.log('upload success!');
+                    alert('업로드가 완료되었습니다.')
                 })
                 .catch(err => {
                     console.error('upload fali!');
